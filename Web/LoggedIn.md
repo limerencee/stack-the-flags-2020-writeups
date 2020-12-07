@@ -7,14 +7,14 @@ The description given for this challenge was:
 It looks like COViD's mobile application is connecting to this API! Fortunately, our agents stole part of the source code. Can you find a way to log in?
 ```
 
-<br/>
+Most of the source code for this challenge was given, so let's get down to it!
 
 ## Codebase Analysis
 After proceeding to download the source, I found out that it was based-off [express-generator](https://expressjs.com/en/starter/generator.html).
 
-<img src="screenshots/loggedin-1.jpg" style="width:50%; border:10px black" caption="Directory structure based off the express-generator template." />
-
-<br/>
+<p align="center">
+    <img src="screenshots/loggedin-1.jpg" style="width:50%; border: 0.8px solid black" caption="Directory structure based off the express-generator template." />
+</p>
 
 Realizing this, the first file that I looked at was the `app.js` configuration file.
 
@@ -141,7 +141,7 @@ In order to get the flag in the HTTP response, I just have to `POST` to http://w
 
 Or is it..?
 
-<img src="screenshots/loggedin-2.jpg" style="border:10px black" caption="POST to /api/login with username and password parameters" />
+<img src="screenshots/loggedin-2.jpg" style="border: 0.8px solid black" caption="POST to /api/login with username and password parameters" />
 
 <br/>
 
@@ -159,13 +159,13 @@ Thus, setting the `username` and `password` parameters in either the request coo
 
 Cookies method:
 
-<img src="screenshots/loggedin-3.jpg" style="border:10px black" caption="POST to /api/login with username and password parameters" />
+<img src="screenshots/loggedin-3.jpg" style="border: 0.8px solid black" caption="POST to /api/login with username and password parameters" />
 
 <br/>
 
 Headers method:
 
-<img src="screenshots/loggedin-4.jpg" style="border:10px black" caption="POST to /api/login with username and password parameters" />
+<img src="screenshots/loggedin-4.jpg" style="border: 0.8px solid black" caption="POST to /api/login with username and password parameters" />
 
 <br/>
 

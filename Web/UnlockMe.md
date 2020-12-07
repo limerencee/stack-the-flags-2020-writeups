@@ -13,13 +13,13 @@ Our agents discovered COViD's admin panel! They also stole the credentials minio
 
 Opening the link shows a simple login page. The first thing I did was to check the source for any HTML comments (they usually contain useful hints).
 
-<img src="screenshots/unlockme-1.jpg" style="border:10px black" caption="Login page from the challenge site." />
+<img src="screenshots/unlockme-1.jpg" style="border: 0.8px solid black" caption="Login page from the challenge site." />
 
 <br/>
 
 True enough, there is one comment that says something about `public.pem`. My instinct was to see if the file is available for me to download by visiting `/public.pem`, which was successful:
 
-<img src="screenshots/unlockme-2.jpg" style="border:10px black" caption="Downloading /public.pem was successful." />
+<img src="screenshots/unlockme-2.jpg" style="border: 0.8px solid black" caption="Downloading /public.pem was successful." />
 
 <br/>
 
@@ -59,7 +59,7 @@ In this [promise chain](https://javascript.info/promise-chaining) and using [fet
 
 Observe the (un)authentication in action when using the credentials `minion:banana`:
 
-<img src="screenshots/unlockme-3.jpg" style="border:10px black" caption="Attempting to login with the given credentials." />
+<img src="screenshots/unlockme-3.jpg" style="border: 0.8px solid black" caption="Attempting to login with the given credentials." />
 
 <br/>
 
@@ -69,7 +69,7 @@ I recognized that the `data.accessToken` is actually a [JWT web token](https://j
 
 I proceeded to use [JWT.io](https://www.jwt.io) to decode this token and to analyze the payload within:
 
-<img src="screenshots/unlockme-4.jpg" style="border:10px black" caption="Decoded JWT token." />
+<img src="screenshots/unlockme-4.jpg" style="border: 0.8px solid black" caption="Decoded JWT token." />
 
 <br/>
 
@@ -130,9 +130,9 @@ JWT Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1pbmlvbiIsImlh
 
 Using this generated JWT token in-place of the original one, I sent a `GET` request to `/unlock`:
 
-<img src="screenshots/unlockme-5.jpg" style="border:10px black" caption="Logging in with the generated JWT token." />
+<img src="screenshots/unlockme-5.jpg" style="border: 0.8px solid black" caption="Logging in with the generated JWT token." />
 
-<img src="screenshots/unlockme-6.jpg" style="border:10px black" caption="Logging in with the generated JWT token." />
+<img src="screenshots/unlockme-6.jpg" style="border: 0.8px solid black" caption="Logging in with the generated JWT token." />
 
 <br/>
 
